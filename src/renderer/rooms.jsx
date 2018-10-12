@@ -59,13 +59,11 @@ export default class Rooms extends React.Component {
             return;
         }
 
-        console.log("push");
         const newRoomRef = this.db.ref("/chatrooms").push();
         const newRoom = {
             description: roomName
         }
 
-        console.log("update");
         newRoomRef.update(newRoom).then(() => {
             this.setState({ roomName: "" });
 
@@ -76,6 +74,7 @@ export default class Rooms extends React.Component {
     }
 
     render() {
+        console.log("render")
         return (
             <div className="pane-group">
                 <div className="pane-sm sidebar">{this.renderRoomList()}</div>
@@ -85,6 +84,7 @@ export default class Rooms extends React.Component {
     }
 
     renderRoomList() {
+        console.log("renderRoomList")
         const {roomId} = this.props.params;
         const {rooms, roomName} = this.state;
         return (
@@ -103,6 +103,7 @@ export default class Rooms extends React.Component {
     }
 
     renderRoom() {
+        console.log("renderRoom")
         if (this.props.children) {
             return this.props.children;
         } else {
