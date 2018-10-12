@@ -34,7 +34,7 @@ export default class Rooms extends React.Component {
     }
 
     fetchRooms() {
-        console.log("fetchRooms");
+        
 
         return this.db.ref("/chatrooms").limitToLast(20).once("value").then(snapshot => {
             const rooms = [];
@@ -74,7 +74,7 @@ export default class Rooms extends React.Component {
     }
 
     render() {
-        console.log("render")
+        
         return (
             <div className="pane-group">
                 <div className="pane-sm sidebar">{this.renderRoomList()}</div>
@@ -84,7 +84,7 @@ export default class Rooms extends React.Component {
     }
 
     renderRoomList() {
-        console.log("renderRoomList")
+        
         const {roomId} = this.props.params;
         const {rooms, roomName} = this.state;
         return (
@@ -103,7 +103,7 @@ export default class Rooms extends React.Component {
     }
 
     renderRoom() {
-        console.log("renderRoom")
+        
         if (this.props.children) {
             return this.props.children;
         } else {
